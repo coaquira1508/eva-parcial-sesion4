@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla Informativa</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        .categoria {
+            color: #800080; /* Color púrpura de la imagen */
+            font-weight: bold;
+            text-decoration: underline;
+            vertical-align: middle;
+            text-align: center;
+            width: 100px;
+        }
+        .imagen-celda {
+            width: 250px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td class="categoria" rowspan="5">Gastronomía</td>
+        <td>Restaurantes</td>
+        <td class="imagen-celda" rowspan="5">
+            <img src="comida.jpg" alt="Gastronomía">
+            <img src="vino.jpeg" alt="Platos típicos">
+        </td>
+    </tr>
+    <tr><td>Sidrerías y asadores</td></tr>
+    <tr><td>Bodegas de vino y txakoli</td></tr>
+    <tr><td>Productos típicos</td></tr>
+    <tr><td>Escuelas de hostelería</td></tr>
+
+    <tr>
+        <td class="categoria" rowspan="4">Cultura</td>
+        <td>Archivos y bibliotecas</td>
+        <td class="imagen-celda" rowspan="4">
+            <img src="biblioteca.jpg" alt="Cultura">
+        </td>
+    </tr>
+    <tr><td>Museos</td></tr>
+    <tr><td>Palacios de congresos</td></tr>
+    <tr><td>Ferias de muestras</td></tr>
+
+    <tr>
+        <td class="categoria" rowspan="3">Ocio</td>
+        <td>Entretenimiento y diversión</td>
+        <td class="imagen-celda" rowspan="3">
+            <img src="playa.jpeg" alt="Costa">
+        </td>
+    </tr>
+    <tr><td>Ocio cultural</td></tr>
+    <tr><td>Excursiones y deporte</td></tr>
+</table>
+
+</body>
+</html>

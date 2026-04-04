@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora Prototipo - UPRIT</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffffff; 
+            margin: 0;
+            padding: 50px;
+        }
+
+        .contenedor {
+            width: 300px;
+            margin-left: 50px; 
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #cccccc;
+            text-align: left; 
+        }
+
+        h2 {
+            font-style: italic;
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .pantalla-input {
+            width: 95%;
+            height: 40px;
+            font-size: 20px;
+            text-align: right;
+            margin-bottom: 10px;
+            background: #ffffff;
+            border: 1px solid #999;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        table {
+            margin: 0;
+        }
+
+        /* Botones blancos */
+        .btn-calc {
+            width: 60px;
+            height: 45px;
+            font-size: 18px;
+            margin: 3px;
+            cursor: pointer;
+            background: #ffffff; 
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Botón Regresar en blanco */
+        .btn-regresar {
+            width: 265px;
+            height: 45px;
+            margin-top: 10px;
+            cursor: pointer;
+            background: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+    <h2>MI CALCULADORA PERSONAL</h2>
+    
+    <form>
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input type="text" class="pantalla-input" placeholder="0">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" class="btn-calc" value="7"></td>
+                <td><input type="button" class="btn-calc" value="8"></td>
+                <td><input type="button" class="btn-calc" value="9"></td>
+                <td><input type="button" class="btn-calc" value="/"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="btn-calc" value="4"></td>
+                <td><input type="button" class="btn-calc" value="5"></td>
+                <td><input type="button" class="btn-calc" value="6"></td>
+                <td><input type="button" class="btn-calc" value="*"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="btn-calc" value="1"></td>
+                <td><input type="button" class="btn-calc" value="2"></td>
+                <td><input type="button" class="btn-calc" value="3"></td>
+                <td><input type="button" class="btn-calc" value="-"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="btn-calc" value="0"></td>
+                <td><input type="button" class="btn-calc" value="."></td>
+                <td><input type="button" class="btn-calc" value="="></td>
+                <td><input type="button" class="btn-calc" value="+"></td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <input type="reset" class="btn-regresar" value="Regresar">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

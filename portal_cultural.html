@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Cultural - Categorías Dinámicas</title>
+    <style>
+        /* Variables de color para coherencia */
+        :root {
+            --color-primario: #6d214f; /* Borgoña cultural */
+            --color-fondo: #fcfaf9;
+            --color-texto: #2f3640;
+            --linea-separadora: #dcdde1;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--color-fondo);
+            font-family: 'Georgia', serif;
+            color: var(--color-texto);
+        }
+
+        /* Contenedor principal */
+        .tabla-principal {
+            width: 100%;
+            height: 100vh;
+            border-collapse: collapse;
+        }
+
+        /* Columna Izquierda (Menú) */
+        .col-menu {
+            width: 20%;
+            padding: 40px 20px;
+            vertical-align: top;
+            background-color: #fff;
+            /* Línea separadora a la derecha */
+            border-right: 2px solid var(--linea-separadora); 
+        }
+
+        .col-menu h2 {
+            color: var(--color-primario);
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Enlaces del Menú */
+        .menu-link {
+            display: block;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            color: var(--color-texto);
+            text-decoration: none;
+            border-left: 4px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .menu-link:hover {
+            background-color: #f1f2f6;
+            border-left: 4px solid var(--color-primario);
+            padding-left: 20px;
+        }
+
+        /* Columna Derecha (Contenido) */
+        .col-contenido {
+            width: 80%;
+            padding: 0;
+            background-color: var(--color-fondo);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="tabla-principal">
+        <tr>
+            <td class="col-menu">
+                <h2>Cultura Viva</h2>
+                <nav>
+                    <a href="historia.html" target="marco_dinamico" class="menu-link">🏛️ Historia</a>
+                    <a href="museos.html" target="marco_dinamico" class="menu-link">🖼️ Museos</a>
+                    <a href="festivales.html" target="marco_dinamico" class="menu-link">🎭 Festivales</a>
+                    <a href="artesania.html" target="marco_dinamico" class="menu-link">🏺 Artesanía</a>
+                </nav>
+            </td>
+
+            <td class="col-contenido">
+                <iframe name="marco_dinamico" src="historia.html" title="Contenido dinámico">
+                    Cargando contenido...
+                </iframe>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

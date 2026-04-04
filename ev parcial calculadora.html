@@ -57,6 +57,10 @@
             border-radius: 5px;
         }
 
+        .btn-calc:active {
+            background-color: #f0f0f0;
+        }
+
         /* Botón Regresar en blanco */
         .btn-regresar {
             width: 265px;
@@ -75,45 +79,67 @@
 <div class="contenedor">
     <h2>MI CALCULADORA PERSONAL</h2>
     
-    <form>
+    <form name="calc">
         <table>
             <tr>
                 <td colspan="4">
-                    <input type="text" class="pantalla-input" placeholder="0">
+                    <input type="text" id="pantalla" class="pantalla-input" placeholder="0" readonly>
                 </td>
             </tr>
             <tr>
-                <td><input type="button" class="btn-calc" value="7"></td>
-                <td><input type="button" class="btn-calc" value="8"></td>
-                <td><input type="button" class="btn-calc" value="9"></td>
-                <td><input type="button" class="btn-calc" value="/"></td>
+                <td><input type="button" class="btn-calc" value="7" onclick="agregar('7')"></td>
+                <td><input type="button" class="btn-calc" value="8" onclick="agregar('8')"></td>
+                <td><input type="button" class="btn-calc" value="9" onclick="agregar('9')"></td>
+                <td><input type="button" class="btn-calc" value="/" onclick="agregar('/')"></td>
             </tr>
             <tr>
-                <td><input type="button" class="btn-calc" value="4"></td>
-                <td><input type="button" class="btn-calc" value="5"></td>
-                <td><input type="button" class="btn-calc" value="6"></td>
-                <td><input type="button" class="btn-calc" value="*"></td>
+                <td><input type="button" class="btn-calc" value="4" onclick="agregar('4')"></td>
+                <td><input type="button" class="btn-calc" value="5" onclick="agregar('5')"></td>
+                <td><input type="button" class="btn-calc" value="6" onclick="agregar('6')"></td>
+                <td><input type="button" class="btn-calc" value="*" onclick="agregar('*')"></td>
             </tr>
             <tr>
-                <td><input type="button" class="btn-calc" value="1"></td>
-                <td><input type="button" class="btn-calc" value="2"></td>
-                <td><input type="button" class="btn-calc" value="3"></td>
-                <td><input type="button" class="btn-calc" value="-"></td>
+                <td><input type="button" class="btn-calc" value="1" onclick="agregar('1')"></td>
+                <td><input type="button" class="btn-calc" value="2" onclick="agregar('2')"></td>
+                <td><input type="button" class="btn-calc" value="3" onclick="agregar('3')"></td>
+                <td><input type="button" class="btn-calc" value="-" onclick="agregar('-')"></td>
             </tr>
             <tr>
-                <td><input type="button" class="btn-calc" value="0"></td>
-                <td><input type="button" class="btn-calc" value="."></td>
-                <td><input type="button" class="btn-calc" value="="></td>
-                <td><input type="button" class="btn-calc" value="+"></td>
+                <td><input type="button" class="btn-calc" value="0" onclick="agregar('0')"></td>
+                <td><input type="button" class="btn-calc" value="." onclick="agregar('.')"></td>
+                <td><input type="button" class="btn-calc" value="=" onclick="calcular()"></td>
+                <td><input type="button" class="btn-calc" value="+" onclick="agregar('+')"></td>
             </tr>
             <tr>
                 <td colspan="4">
-                    <input type="reset" class="btn-regresar" value="Regresar">
+                    <input type="reset" class="btn-regresar" value="Regresar" onclick="limpiar()">
                 </td>
             </tr>
         </table>
     </form>
 </div>
+
+<script>
+    const pantalla = document.getElementById('pantalla');
+
+    function agregar(valor) {
+        pantalla.value += valor;
+    }
+
+    function limpiar() {
+        pantalla.value = "";
+    }
+
+    function calcular() {
+        try {
+            // eval() toma el texto de la pantalla y lo resuelve como matemática
+            pantalla.value = eval(pantalla.value);
+        } catch (error) {
+            pantalla.value = "Error";
+            setTimeout(limpiar, 1500);
+        }
+    }
+</script>
 
 </body>
 </html>

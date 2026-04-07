@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Flower Shop - Práctica Final</title>
+    <style>
+        /* 1. CONTENEDOR PRINCIPAL (Página 1-3 del PDF) */
+        body {
+            background-color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        #contenedor_principal {
+            background-color: #b2fba5; /* Fondo verde claro */
+            width: 850px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 1px solid #777;
+            text-align: center;
+        }
+
+        /* 2. LOGOTIPO (Página 4-5) */
+        #logotipo {
+            background-color: #f8d7da; /* Rosado */
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid #000;
+            margin-bottom: 20px;
+        }
+
+        /* 3. TÍTULO Y SUBTÍTULO (Página 6-8) */
+        #franja_titulo {
+            background-color: #eeb431; /* Naranja/Mostaza */
+            border: 1px solid #000;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 { margin: 0; font-size: 24px; color: #000; }
+        h2 { font-size: 20px; margin-top: 10px; }
+
+        /* 4. DOS COLUMNAS CON TABLA (Página 11-13) */
+        #tabla_maqueta {
+            width: 100%;
+            border-spacing: 20px; /* Espacio entre cuadros */
+        }
+
+        .cuadro_azul {
+            background-color: #9dc3e6; /* Azul claro */
+            border: 1px solid #000;
+            padding: 20px;
+            width: 50%;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        /* Alineación interna con tablas (Página 16 del PDF) */
+        .tabla_datos {
+            width: 100%;
+        }
+
+        .tabla_datos td {
+            padding: 5px;
+        }
+
+        input[type="text"], input[type="password"] {
+            border: 1px solid #000;
+            width: 180px;
+        }
+
+        .input_tarjeta {
+            width: 95%;
+            margin: 10px 0;
+        }
+
+        /* 5. BOTÓN (Página 14-15) */
+        #boton_pedido {
+            background-color: #efefef;
+            border: 1px solid #767676;
+            padding: 10px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 2px 2px 0px #000;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="contenedor_principal">
+        
+        <div id="logotipo">
+            <img src="https://cdn-icons-png.flaticon.com/128/3462/3462210.png" width="70" alt="Tulipán">
+            <div style="font-weight: bold; margin-top: 5px;">FLOWER SHOP</div>
+        </div>
+
+        <div id="franja_titulo">
+            <h1>FORMULARIO DE CAPTURA DE DATOS</h1>
+        </div>
+
+        <h2>NUEVO PEDIDO</h2>
+
+        <form id="miPedido">
+            <table id="tabla_maqueta">
+                <tr>
+                    <td class="cuadro_azul">
+                        <table class="tabla_datos">
+                            <tr>
+                                <td>Nombre:</td>
+                                <td><input type="text" id="nombre" name="nombre" required></td>
+                            </tr>
+                            <tr>
+                                <td>Apellidos:</td>
+                                <td><input type="text" name="apellidos" required></td>
+                            </tr>
+                            <tr>
+                                <td>Direccion:</td>
+                                <td><input type="text" name="direccion" required></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <td class="cuadro_azul">
+                        Número de tarjeta de crédito
+                        <input type="password" name="tarjeta" class="input_tarjeta" required>
+                        
+                        <div style="line-height: 1.8;">
+                            <input type="radio" name="banco" value="Banamex" id="b1" required> <label for="b1">Banamex</label><br>
+                            <input type="radio" name="banco" value="Banorte" id="b2"> <label for="b2">Banorte</label><br>
+                            <input type="radio" name="banco" value="HSBC" id="b3"> <label for="b3">HSBC</label><br>
+                            <input type="radio" name="banco" value="Banco Azteca" id="b4"> <label for="b4">Banco Azteca</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <input type="submit" id="boton_pedido" value="Realizar pedido">
+        </form>
+
+    </div>
+
+    <script>
+        // Lógica coherente: Notificar y limpiar para que inicie de nuevo
+        document.getElementById('miPedido').addEventListener('submit', function(e) {
+            e.preventDefault(); // Detiene el envío real
+            
+            var nombre = document.getElementById('nombre').value;
+            alert("¡Gracias " + nombre + "! Su pedido ha sido enviado con éxito.");
+            
+            // Reinicia el formulario para el siguiente pedido
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>

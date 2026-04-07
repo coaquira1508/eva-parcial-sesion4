@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+    <title>Formulario combinado con una tabla</title>
+    <style>
+        /* Estilos básicos para que coincida con la estructura */
+        body {
+            font-family: 'Times New Roman', serif;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 1.25em; /* Reducido a la mitad según tu instrucción previa */
+            margin-bottom: 5px;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            padding: 4px;
+        }
+        b {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Uso de una tabla para alinear un formulario</h1>
+    
+    <p><b>Programado por: </b> Jose Luis Coaquira </p>
+
+    <form id="miFormulario" method="get">
+        <table>
+            <tr>
+                <td><b>Nombre del alumno: </b></td>
+                <td><input type="text" name="nombre"></td>
+            </tr>
+            <tr>
+                <td><b>Apellido paterno: </b></td>
+                <td><input type="text" name="apellido_p"></td>
+            </tr>
+            <tr>
+                <td><b>Apellido materno: </b></td>
+                <td><input type="text" name="apellido_m"></td>
+            </tr>
+            <tr>
+                <td><b>Correo electronico: </b></td>
+                <td><input type="text" name="correo"></td>
+            </tr>
+            <tr>
+                <td><b>Edad: </b></td>
+                <td><input type="text" name="edad"></td>
+            </tr>
+            <tr>
+                <td><b>Escuela: </b></td>
+                <td>
+                    <select name="escuela">
+                        <option value="cbtis166">cbtis 166</option>
+                        <option value="cbtis94">cbtis 94</option>
+                        <option value="cbtis223">cbtis 223</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Municipio: </b></td>
+                <td>
+                    <select name="municipio">
+                        <option value="Cuernavaca">Cuernavaca</option>
+                        <option value="Jiutepec">Jiutepec</option>
+                        <option value="Zapata">Emiliano Zapata</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Comentarios: </b></td>
+                <td>
+                    <textarea cols="20" rows="6" name="comentarios"></textarea>
+                </td>
+            </tr>
+        </table>
+        
+        <br>
+        <input type="submit" value="Enviar datos" />
+    </form>
+
+    <script>
+        // Lógica para reiniciar el formulario tras el envío
+        document.getElementById('miFormulario').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita la recarga por el método GET para ver la alerta
+            alert("Formulario enviado con éxito");
+            this.reset(); // Reinicia el formulario
+        });
+    </script>
+
+</body>
+</html>

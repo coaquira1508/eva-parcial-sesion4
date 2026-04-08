@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h3>Positivo, Negativo o Cero</h3>
+    <input type="number" id="num1" placeholder="Ingresa un número">
+    <button onclick="verificar()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificar() {
+            let n = parseFloat(document.getElementById("num1").value);
+            let res = (n > 0) ? "Positivo" : (n < 0) ? "Negativo" : "Es cero";
+            document.getElementById("resultado").innerText = res;
+        }
+    </script>
+</body>
+</html>

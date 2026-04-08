@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Día de la Semana</title>
+</head>
+
+<body>
+
+<h3>Mostrar el día de la semana</h3>
+<p>Ingrese un número (1 - 7):</p>
+<input type="number" id="numDia">
+<br><br>
+<button onclick="obtenerDia()">Mostrar Día</button>
+<br><br>
+<p>Día:</p>
+<input type="text" id="resultado" readonly>
+
+<script>
+
+function obtenerDia() {
+    let d = parseInt(document.getElementById("numDia").value);
+    const dias = [
+        "Lunes",
+        "Martes",
+        "Miércoles",
+        "Jueves",
+        "Viernes",
+        "Sábado",
+        "Domingo"
+    ];
+
+    let resultado = dias[d - 1] || "Número inválido";
+    document.getElementById("resultado").value = resultado;
+}
+
+</script>
+
+</body>
+</html>

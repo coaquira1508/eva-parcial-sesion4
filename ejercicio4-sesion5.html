@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mayor de Edad</title>
+</head>
+
+<body>
+
+<h3>Determinar si una persona es mayor de edad</h3>
+
+<input type="number" id="edad" placeholder="Tu edad">
+<button onclick="esMayor()">Comprobar</button>
+
+<p id="resultado"></p>
+
+<script>
+function esMayor() {
+
+    let e = document.getElementById("edad").value;
+
+    if (e >= 18) {
+        document.getElementById("resultado").innerText = "Eres mayor de edad";
+    } else {
+        document.getElementById("resultado").innerText = "Eres menor de edad";
+    }
+
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Múltiplo de 3 y 5</title>
+</head>
+<body>
+<input type="number" id="m" placeholder="Número">
+<button onclick="multiplo()">¿Es múltiplo?</button>
+<p id="resultado"></p>
+<script>
+function multiplo() {
+let n = document.getElementById("m").value;
+let res = document.getElementById("resultado");
+if(n % 3 === 0 && n % 5 === 0) res.textContent = "Es múltiplo de ambos";
+else res.textContent = "No es múltiplo de ambos";
+}
+</script>
+</body>
+</html>

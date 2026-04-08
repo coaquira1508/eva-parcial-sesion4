@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Conversión de Temperatura</title>
+</head>
+
+<body>
+
+<h3>Convertir grados Celsius a Fahrenheit</h3>
+<p>Grados Celsius:</p>
+<input type="number" id="c">
+<br><br>
+<button onclick="convertir()">Convertir</button>
+<br><br>
+<p>Grados Fahrenheit:</p>
+<input type="text" id="f" readonly>
+
+<script>
+function convertir() {
+    let c = document.getElementById("c").value;
+    let f = (c * 9/5) + 32;
+    document.getElementById("f").value = f;
+}
+</script>
+
+</body>
+</html>
